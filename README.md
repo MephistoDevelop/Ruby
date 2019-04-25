@@ -4,11 +4,12 @@
 
 **Description**
 
-Simple repository to save basic projects with the basic structure for Ruby languaje
+Simple repository to save basic projects with the basic structure for Ruby languaje.
 
 # Languaje
 
 Ruby
 
 **Coded by**
+
 [MephistoDevelop](https://www.github.com/mephistodevelop)
