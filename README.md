@@ -1,6 +1,6 @@
-#Ruby Projects
+# Ruby Projects
 
-###Basic Guide for Ruby languaje
+### Basic Guide for Ruby languaje
 
 **Description**
 
