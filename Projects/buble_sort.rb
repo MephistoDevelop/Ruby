@@ -1,12 +1,12 @@
-class Bubble_sort
+class Project
    attr_accessor :arr
 
-   def initialize(arr)
-         @arr=arr
+   def initialize
       end
 
-      public def todo;
-         @new_arr=@arr
+      public def Bubble_sort(arr);
+      @arr = arr
+         @new_arr=arr
          for i in 0..@arr.length-1 do
              for j in 0..@new_arr.length-1 do
               @item=@arr[i]
@@ -21,6 +21,6 @@ class Bubble_sort
     end #end del metodo "todo"
  end #end of class
 
- @Arr=["hi", "hey", "hello"]
- @variable=Bubble_sort.new(@Arr)
- puts @variable.todo
+ Arr=["hola","halo","hi",  "hello", "hey"]
+ var = Project.new
+ puts var.Bubble_sort(Arr)

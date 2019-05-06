@@ -1,20 +1,25 @@
 module Enumerable
 
-    def self.my_each(arr)
-     count=0
-        while (count<=arr.length) do
-
-            if( count == arr.length)
-                break;
-            else
-            puts arr[count]
-            end
-            count+=1
-        end
-
+    def my_each
+     for item in self do
+        yield  item
     end
 end
 
 
-arr=["diego","marihuano","y","q",5,9,12,6]
-Enumerable.my_each(arr)
+    def my_inject(codigo)
+
+
+      end
+
+    def multiply_els(array)
+
+    end
+
+
+end
+
+procedimiento = Proc.new{ |item| puts item }
+arr=[2,8,2]
+procedimiento.call(2)
+#puts arr.multiply_els(arr)
