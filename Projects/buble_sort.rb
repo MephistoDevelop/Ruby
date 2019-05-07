@@ -24,13 +24,11 @@ class Project
     def Bubble_sort_by(arr)
       last_check = arr.length-2
       count = 0
-      new_arr = []
       for i in 0..last_check
         #puts "#{yield(arr[i], arr[i + 1])*-1} yield value : last_check = #{last_check} : i = #{i} "
           if (yield(arr[i], arr[i + 1])*-1) > 0
             arr[i], arr[i + 1] = arr[i + 1], arr[i]
             count += 1
-            new_arr.push(arr[i])
           end
       end
   return arr.reverse.to_s
