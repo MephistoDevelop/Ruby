@@ -6,7 +6,6 @@ module Enumerable
        end
     end
 
-
     def my_each_with_index
        self.length.times{ |i|   yield(self[i],i) }
     end
@@ -19,7 +18,7 @@ module Enumerable
 
      def my_all?
        flag = 0
-       self.my_each{ |x|
+       self.my_each {  |x|
             yield(x) ? flag=1 : r=true}
             puts  flag==1 ? false : true
       end
@@ -67,7 +66,7 @@ module Enumerable
     end
 
     def multiply_els(array)
-      array.my_inject{ |num,x|  num *= x }
+     puts array.my_inject{ |num,x|  num *= x }
     end
 
 
@@ -139,6 +138,11 @@ puts "Assigment 2 - Ruby Section"
 #puts arr.inject { |sum,x| sum+= x }
 
 ##########################################################################
-puts "Method #10 - Multiply_els"
-arr=[2,4,5]
-puts arr.multiply_els(arr)
+
+#puts "Method #10 - Multiply_els"
+#arr=[2,4,5]
+#puts arr.multiply_els(arr)
+# => 40
+
+##########################################################################
+puts "Method #11- Map with Proc"

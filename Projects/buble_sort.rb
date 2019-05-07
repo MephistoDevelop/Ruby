@@ -1,8 +1,3 @@
-class Project
-   attr_accessor :arr
-
-   def initialize
-      end
 
       public def Bubble_sort(arr);
       @arr = arr
@@ -19,8 +14,7 @@ class Project
           end #end of the second for
           return @arr
     end #end del metodo "todo"
- end #end of class
 
  Arr=["hola","halo","hi",  "hello", "hey"]
- var = Project.new
- puts var.Bubble_sort(Arr)
+
+ puts Arr.Bubble_sort(Arr)
