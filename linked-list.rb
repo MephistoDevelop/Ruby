@@ -43,9 +43,11 @@ class LinkedList
       current = current.next
     end
     elements << current
+    puts "#{elements[0].val.to_s}  :   #{elements[1].val.to_s}  :  #{elements[2].val.to_s}"
   end
 end
 
-lista= LinkedList.new(5)
-lista.add(3)
-lista.return_list
+lista = LinkedList.new(10)
+lista.add(8)
+lista.add(7)
+puts lista.return_list
