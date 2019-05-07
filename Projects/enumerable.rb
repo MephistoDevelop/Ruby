@@ -63,11 +63,11 @@ module Enumerable
         x = yield(x,item)
       end
       }
-puts x
+       puts x
     end
 
     def multiply_els(array)
-      return  Proc.new{ |item| puts item }
+      array.my_inject{ |num,x|  num *= x }
     end
 
 
@@ -133,11 +133,12 @@ puts "Assigment 2 - Ruby Section"
 
 ##########################################################################
 
-puts "Method #9 - My_inject"
-arr=[2,3,5,12,8,1]
- arr.my_inject{ |sum,x|  sum += x }
-puts arr.inject { |sum,x| sum+= x }
+#puts "Method #9 - My_inject"
+#arr=[2,3,5,12,8,1]
+ #arr.my_inject{ |sum,x|  sum += x }
+#puts arr.inject { |sum,x| sum+= x }
 
 ##########################################################################
-
-#puts arr.multiply_els(arr)
+puts "Method #10 - Multiply_els"
+arr=[2,4,5]
+puts arr.multiply_els(arr)
