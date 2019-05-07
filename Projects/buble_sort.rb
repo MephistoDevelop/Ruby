@@ -1,18 +1,18 @@
 
       public def Bubble_sort(arr);
-      @arr=arr
-         @new_arr=arr
-         for i in 0..@arr.length-1 do
-             for j in 0..@new_arr.length-1 do
-              @item=@arr[i]
-               @to_compare=@new_arr[j]
-                 if  @item < @to_compare
-                        @arr[i] = @to_compare
-                        @new_arr[j]=@item
+      arreglo=arr
+         new_arr=arr
+         for i in 0..arreglo.length-1 do
+             for j in 0..new_arr.length-1 do
+              item=arreglo[i]
+               to_compare=new_arr[j]
+                 if  item < to_compare
+                        arreglo[i] = to_compare
+                        new_arr[j]=item
                  end # end of if statement
               end #end of first for
           end #end of the second for
-          return @arr.to_s
+          return arreglo.to_s
     end #end del metodo "bubble_sort"
 
     def Bubble_sort_by(arr)
