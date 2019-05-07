@@ -51,10 +51,19 @@ module Enumerable
     end
 
     def my_inject
-x=0
+      flag=false
+      x=1
       #                           2      x= x+item
-      self.my_each { |item|  x = yield(x,item)  }
-      puts  x
+      self.my_each { |item|
+     #   puts "esto es x : #{item}"
+      if flag==false
+         x=item
+        flag=true
+      else
+        x = yield(x,item)
+      end
+      }
+puts x
     end
 
     def multiply_els(array)
@@ -127,7 +136,7 @@ puts "Assigment 2 - Ruby Section"
 puts "Method #9 - My_inject"
 arr=[2,3,5,12,8,1]
  arr.my_inject{ |sum,x|  sum += x }
-puts arr.inject { |sum,x| sum += x }
+puts arr.inject { |sum,x| sum+= x }
 
 ##########################################################################
 
