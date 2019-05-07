@@ -51,8 +51,7 @@ module Enumerable
     end
 
     def my_inject
-     y=yield(10,6).to_s
-     puts y
+
       #                           2      x= x+item
       self.my_each { |item|  x = yield(x,item)  }
       puts  x
