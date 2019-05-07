@@ -37,4 +37,6 @@ class Project
 
  variable=Project.new
  puts variable.Bubble_sort([4,3,78,2,0,2])
+ # => [0, 2, 2, 3, 4, 78]
  puts variable.Bubble_sort_by(["hey", "hello", "hi"]) { |left,rigth| r=((left.length - rigth.length))   }
+ # =>  ["hi", "hey", "hello"]
