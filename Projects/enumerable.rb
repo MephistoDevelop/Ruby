@@ -1,34 +1,34 @@
 module Enumerable
 
     def my_each
-     for item in self do
-        yield( item)
-        end
+        for item in self do
+            yield( item)
        end
+    end
 
 
-       def my_each_with_index
-            self.length.times{ |i|   yield(self[i],i) }
-        end
+    def my_each_with_index
+       self.length.times{ |i|   yield(self[i],i) }
+    end
 
-        def my_select
-            arr=[]
-          self.my_each{ |i| yield(i) ? arr.push(i) : i }
-           arr
-        end
+     def my_select
+       arr=[]
+       self.my_each{ |i| yield(i) ? arr.push(i) : i }
+       arr
+     end
 
-        def my_all?
+     def my_all?
        flag = 0
        self.my_each{ |x|
-        yield(x) ? flag=1 : r=true}
-puts  flag==1 ? false : true
-        end
-
-    def my_inject(codigo)
+            yield(x) ? flag=1 : r=true}
+            puts  flag==1 ? false : true
       end
 
+    def my_inject(codigo)
+    end
+
     def multiply_els(array)
-          return  Proc.new{ |item| puts item }
+      return  Proc.new{ |item| puts item }
     end
 
 
