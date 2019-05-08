@@ -20,7 +20,7 @@ module Enumerable
        flag = 0
        self.my_each {  |x|
             yield(x) ? flag=1 : r=true}
-            puts  flag==1 ? false : true
+            return  flag==1 ? false : true
       end
 
       def my_any?
@@ -28,7 +28,7 @@ module Enumerable
           self.my_each { |x|
           yield(x) ? flag=1 : false
         }
-        puts flag==1 ? true : false
+        return flag==1 ? true : false
     end
 
     def my_none?
@@ -40,7 +40,7 @@ module Enumerable
     def my_count
        count =0
        self.my_each{count +=1 }
-       count
+       count-1
     end
 
     def my_map(procs=nil)
@@ -52,7 +52,7 @@ module Enumerable
       else
         self.my_each {|i| arr << procs.call(i) }
       end
-      arr.to_s
+      arr
     end
 
     def my_inject
@@ -102,16 +102,16 @@ puts "Assigment 2 - Ruby Section"
 
 ##########################################################################
 
- #puts "Method #4 - My_all?"
- #arr= [2,4,14,17,nil]
-#arr.my_all?{ |x|  x==nil }  #my enumerable method
+# puts "Method #4 - My_all?"
+# arr= [2,4,14,17,nil]
+#puts arr.my_all?{ |x|  x==nil }  #my enumerable method
 #puts arr.all?  #original Enumerable Method
 
 ##########################################################################
 
  #puts "Method #5 - My_any?"
  #arr= [2,4,14,17,nil]
- #arr.my_any?{|item| item == 17}
+#puts  arr.my_any?{|item| item == 17}
 #puts arr.any?(17)
 
 ##########################################################################
