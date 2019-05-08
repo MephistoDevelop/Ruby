@@ -81,6 +81,7 @@ end
 arr=[2,8,4,14,17,27]
 # my_each function
 puts "Assigment 2 - Ruby Section"
+
 ##########################################################################
 
 #puts "Method #1 - My_each "
@@ -149,6 +150,9 @@ puts "Assigment 2 - Ruby Section"
 # => 40
 
 ##########################################################################
-puts "Method #11- Map with Proc"
-arr=[2,3,5,12,8,1]
-puts arr.my_map(&(Proc.new  {|x | x ** 2 }))
+
+#puts "Method #11- Map with Proc"
+#arr=[2,3,5,12,8,1]
+#puts arr.my_map(&(Proc.new  {|x | x ** 2 }))
+
+##########################################################################
