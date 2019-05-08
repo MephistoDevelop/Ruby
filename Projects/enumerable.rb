@@ -77,7 +77,6 @@ module Enumerable
 
 end
 
-
 arr=[2,8,4,14,17,27]
 # my_each function
 puts "Assigment 2 - Ruby Section"
