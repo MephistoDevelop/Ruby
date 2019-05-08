@@ -19,15 +19,13 @@ module Enumerable
      def my_all?
        flag = 0
        self.my_each {  |x|
-            yield(x) ? flag=1 : r=true}
+            yield(x) ? flag=1 : r=true }
             return  flag==1 ? false : true
       end
 
       def my_any?
         flag=false
-          self.my_each { |x|
-          yield(x) ? flag=1 : false
-        }
+          self.my_each { |x|   yield(x)  ?  flag=1 : false      }
         return flag==1 ? true : false
     end
 
@@ -44,32 +42,31 @@ module Enumerable
     end
 
     def my_map(procs=nil)
-      arr = []
-      if procs && block_given?
-        self.my_each {|i| arr << procs.call(yield(i))}
-      elsif block_given?
-        self.my_each {|i| arr << yield(i) }
-      else
-        self.my_each {|i| arr << procs.call(i) }
-      end
-      arr
+       arr = []
+          if procs && block_given?
+              self.my_each {|i| arr << procs.call(yield(i))}
+           elsif block_given?
+              self.my_each {|i| arr << yield(i) }
+           else
+         self.my_each {|i| arr << procs.call(i) }
+          end
+       arr
     end
 
     def my_inject
-      flag=false
-      x=1
-      #                           2      x= x+item
-      self.my_each { |item|
-     #   puts "esto es x : #{item}"
-      if flag==false
-         x=item
-        flag=true
-      else
-        x = yield(x,item)
-      end
-      }
+       flag=false
+        x=1
+         #                           2      x= x+item
+         self.my_each { |item|
+         #   puts "esto es x : #{item}"
+          if flag==false
+             x=item
+             flag=true
+           else
+           x = yield(x,item)
+           end      }
        puts x
-    end
+   end
 
     def multiply_els(array)
      puts array.my_inject{ |num,x|  num *= x }
@@ -94,6 +91,7 @@ puts "Assigment 2 - Ruby Section"
 #arr.my_each_with_index{ |val,i| puts "Value :#{val} is on the position: #{i} "}
 
 ##########################################################################
+
 #puts  arr.my_select{ |x| x%2==0}.to_s
 #input array = [2,8,4,14,17,27]
 # output =>[2, 8, 4, 14]
