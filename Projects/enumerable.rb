@@ -38,15 +38,21 @@ module Enumerable
     end
 
     def my_count
-      count =0
-      self.my_each{count +=1 }
-      count
+       count =0
+       self.my_each{count +=1 }
+       count
     end
 
-    def my_map
+    def my_map(procs=nil)
       arr = []
-      self.my_each{|item|  arr.push(yield(item)) }
-      arr
+      if procs && block_given?
+        self.my_each {|i| arr << procs.call(yield(i))}
+      elsif block_given?
+        self.my_each {|i| arr << yield(i) }
+      else
+        self.my_each {|i| arr << procs.call(i) }
+      end
+      arr.to_s
     end
 
     def my_inject
@@ -68,7 +74,6 @@ module Enumerable
     def multiply_els(array)
      puts array.my_inject{ |num,x|  num *= x }
     end
-
 
 end
 
@@ -124,13 +129,12 @@ puts "Assigment 2 - Ruby Section"
 
 ##########################################################################
 
-
 #puts "Method #8 - My_map"
 #arr= [2,4,14,17,nil]
 #puts arr.my_map{ |x| x.to_s+ "!" }.to_s
-#puts arr.map{|x| x.to_s + "!" }.to_s
+#puts arr.map{|x| x.to_s + "!" }.to_s####
 
-##########################################################################
+######################################################################
 
 #puts "Method #9 - My_inject"
 #arr=[2,3,5,12,8,1]
@@ -146,3 +150,5 @@ puts "Assigment 2 - Ruby Section"
 
 ##########################################################################
 puts "Method #11- Map with Proc"
+arr=[2,3,5,12,8,1]
+puts arr.my_map(&(Proc.new  {|x | x ** 2 }))
