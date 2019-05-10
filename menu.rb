@@ -47,7 +47,7 @@ case choice # switch case  if the choice its add | update | delete | display do 
  else
    movies.delete(title.to_sym)
    puts "Pelicula: #{title} eliminada..."
- end
+ end 
 else
  "Error!"
 end
