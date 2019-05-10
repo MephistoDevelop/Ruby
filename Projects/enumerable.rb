@@ -16,12 +16,13 @@ module Enumerable
        arr
      end
 
-     def my_all?
-       flag = 0
-       self.my_each {  |x|
-            yield(x) ? flag=1 : r=true }
-            return  flag==1 ? false : true
+     def my_all? &block
+      self.my_each do |x|
+          return false if yield(x) == false
       end
+
+      true
+end
 
       def my_any?
         flag=false
@@ -36,10 +37,20 @@ module Enumerable
     end
 
     def my_count
-       count =0
-       self.my_each{count +=1 }
-       count-1
-    end
+      i = 0
+      count = 0
+      while i < self.length
+        if block_given?
+          if yield self[i]
+            count = count + 1
+          end
+        else
+          count = count + 1
+        end
+        i = i + 1
+      end
+      count
+  end
 
     def my_map(procs=nil)
        arr = []
@@ -74,11 +85,6 @@ module Enumerable
 
 end
 
-
-arr=[2,8,4,14,17,27]
-# my_each function
-puts "Assigment 2 - Ruby Section"
-
 ##########################################################################
 
 #puts "Method #1 - My_each "
@@ -98,10 +104,10 @@ puts "Assigment 2 - Ruby Section"
 
 ##########################################################################
 
-# puts "Method #4 - My_all?"
-# arr= [2,4,14,17,nil]
-#puts arr.my_all?{ |x|  x==nil }  #my enumerable method
-#puts arr.all?  #original Enumerable Method
+puts "Method #4 - My_all?"
+ arr= [2,4,14,17]
+puts arr.my_all?{ |x|  x> 10 }  #my enumerable method
+puts arr.all?  #original Enumerable Method
 
 ##########################################################################
 
@@ -120,8 +126,9 @@ puts "Assigment 2 - Ruby Section"
 ##########################################################################
 
 #puts "Method #7 - My_count?"
-#arr= [2,4,14,17,nil]
+#arr= [2,4,14,17]
 #puts arr.my_count
+#puts arr.my_count{|i|  i > 3 }
 #puts arr.count
 
 ##########################################################################
