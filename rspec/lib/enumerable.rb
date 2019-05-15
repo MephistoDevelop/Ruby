@@ -1,6 +1,6 @@
 module Enumerable
 
-  def my_each?
+  def my_each
     for item in self do
         yield( item)
    end
